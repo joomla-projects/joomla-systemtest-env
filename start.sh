@@ -28,7 +28,7 @@ fi;
 
 echo "Running Xvfb at $RESOLUTION"
 
-/usr/bin/Xvfb :99 -ac -screen 0 $RESOLUTION &
+nohup /usr/bin/Xvfb :99 -ac -screen 0 $RESOLUTION &
 export DISPLAY=:99.0
 
 # starting selenium
