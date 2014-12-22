@@ -18,6 +18,6 @@ you should edit Dockerfile in order to customize version of Selenium Server.
 Run the container
 
 ```
-docker run -i -t joomlasystest
+docker run -i -t joomlasystest-env
 ```
 
