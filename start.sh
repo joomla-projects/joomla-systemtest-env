@@ -5,14 +5,20 @@
 /etc/init.d/nginx start
 mysqld_safe &
 
-# clone repo
+# set repo
 if [ ! $REPO ];
 then
   REPO="https://github.com/joomla/joomla-cms.git"
 fi;
 
+# set branch
+if [ ! $BRANCH ];
+then
+  BRANCH="staging"
+fi;
+
 # fetch joomla installation
-git clone $REPO /usr/share/nginx/www/joomla-cms
+git clone --branch=$BRANCH $REPO /usr/share/nginx/www/joomla-cms
 
 # paste unit test config
 cp /configdef.php /usr/share/nginx/www/joomla-cms/tests/system/servers/configdef.php
@@ -31,8 +37,12 @@ echo "Running Xvfb at $RESOLUTION"
 nohup /usr/bin/Xvfb :99 -ac -screen 0 $RESOLUTION &
 export DISPLAY=:99.0
 
+sleep 15
+
 # starting selenium
 nohup java -jar selenium-server.jar &
+
+sleep 15
 
 cd /usr/share/nginx/www/joomla-cms/tests/system/webdriver/tests
 phpunit -c phpunit.xml.dist
