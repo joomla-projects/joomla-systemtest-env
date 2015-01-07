@@ -29,7 +29,7 @@ chown -R www-data:www-data /usr/share/nginx/www/joomla-cms
 # start Xvfb
 if [ ! $RESOLUTION ];
 then
-  RESOLUTION="1024x768x24"
+  RESOLUTION="1280x1024x24"
 fi;
 
 echo "Running Xvfb at $RESOLUTION"
