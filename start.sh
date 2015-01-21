@@ -8,17 +8,17 @@ mysqld_safe &
 # set repo
 if [ ! $REPO ];
 then
-  REPO="https://github.com/joomla/joomla-cms.git"
+  REPO="https://github.com/rdeutz/joomla-cms.git"
 fi;
 
 # set branch
 if [ ! $BRANCH ];
 then
-  BRANCH="staging"
+  BRANCH="simpletest"
 fi;
 
 # fetch joomla installation
-git clone --branch=$BRANCH $REPO /usr/share/nginx/www/joomla-cms
+git clone --depth=50 --branch=$BRANCH $REPO /usr/share/nginx/www/joomla-cms
 
 # paste unit test config
 cp /configdef.php /usr/share/nginx/www/joomla-cms/tests/system/servers/configdef.php
