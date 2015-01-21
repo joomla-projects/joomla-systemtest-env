@@ -7,7 +7,7 @@ This image is used to run the Joomla Systemtest suite and is based on the Seleni
 
 ## Installation
 
-Build the image by yourself. Just clone this repo and run
+Build the image by yourself. Just clone this repo and run:
 
 ```
 docker build -t joomlasystest-env .
