@@ -39,3 +39,7 @@ After the test has been completed, you can extract the result file:
 
 ```
 docker cp CONTAINERID:/usr/share/nginx/www/joomla-cms/tests/system/webdriver/tests/logs/junit.xml /target/path
+````
+
+## More info
+More info at https://docs.joomla.org/Docker_Container_for_System_Tests
