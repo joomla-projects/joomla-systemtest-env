@@ -27,13 +27,13 @@ If you want to run the test suite on a specific repo, append it as an environmen
 
 ```
 docker run -i -t -e REPO=https://github.com/joomla/joomla-cms joomlasystest-env
-
+```
 
 If you want to run the test suite on a specific branch, append it as an environment variable
 
 ```
 docker run -i -t -e BRANCH=staging joomlasystest-env
-
+```
 
 After the test has been completed, you can extract the result file:
 
